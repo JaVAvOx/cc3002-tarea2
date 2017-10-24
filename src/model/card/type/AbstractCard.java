@@ -30,7 +30,7 @@ public abstract class AbstractCard implements ICard {
   public boolean isDiscardable() {
     return true;
   }
-  
+
 
   public String toString() {
     return "[" + symbol + " , " + color + "]";
@@ -38,9 +38,10 @@ public abstract class AbstractCard implements ICard {
 
   @Override
   public boolean isPlayableOver(ICard otherCard) {
-    return this.getColor().equals(otherCard.getColor()) || this.getSymbol().equals(otherCard.getSymbol());
+    return this.getColor().equals(otherCard.getColor())
+        || this.getSymbol().equals(otherCard.getSymbol());
   }
-  
+
   public void setColor(Color c) {
     this.color = c;
   }

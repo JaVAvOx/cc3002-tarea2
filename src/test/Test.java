@@ -19,7 +19,7 @@ public class Test {
     IPlayer randomPlayer3 = new RandomPlayer();
     IPlayer humanPlayer = new HumanPlayer();
     ICardPile mazo = new Deck();
-    
+
   }
 
 }

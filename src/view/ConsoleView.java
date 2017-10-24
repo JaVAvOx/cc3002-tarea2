@@ -43,7 +43,7 @@ public class ConsoleView {
       i++;
     }
   }
-  
+
   /**
    * Shows a custom message.
    * 

@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import model.player.type.IPlayer;
 
 public class PlayerManager implements IPlayerManager {
-  
-  
+
+
   private ArrayList<IPlayer> players;
   private int currentPlayer = 0;
   private Direction direction = Direction.COUNTERCLOCKWISE;
   private int nextPlayer = (currentPlayer + direction.getValue());
-  
+
   public PlayerManager(ArrayList<IPlayer> buildPlayerList) {
     // TODO Auto-generated constructor stub
     players = buildPlayerList;

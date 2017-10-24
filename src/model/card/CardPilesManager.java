@@ -9,16 +9,16 @@ import model.player.type.IPlayer;
 public class CardPilesManager implements ICardPilesManager {
   ICardPile deck;
   ICardPile discard = new CardPile();
-  
-  
+
+
   public CardPilesManager(IDeckStrategy strategy) {
     this.deck = strategy.createDeck();
-    while(!deck.peekCard().isFirstPlayable()) {
-     deck.shuffle(); 
+    while (!deck.peekCard().isFirstPlayable()) {
+      deck.shuffle();
     }
     discard.pushCard(deck.popCard());
   }
-  
+
   @Override
   public void rebuildDeck() {
     ICard a = discard.popCard();

@@ -10,6 +10,7 @@ import view.ConsoleView;
 
 /**
  * A controller which use standard input from console.
+ * 
  * @author eriveros
  *
  */
@@ -20,8 +21,9 @@ public class ConsoleController implements IController {
   Scanner in;
 
   /**
-   * Controller constructor. Initializes model, view, and input method.
-   * Also, it plays the card in discard pile.
+   * Controller constructor. Initializes model, view, and input method. Also, it plays the card in
+   * discard pile.
+   * 
    * @param game
    * @param viewand
    */
@@ -50,7 +52,7 @@ public class ConsoleController implements IController {
     view.showMessage("Elige un color:");
     int i = 0;
     for (Color color : Color.getColors()) {
-      System.out.println(""+i+") "+color.getName());
+      System.out.println("" + i + ") " + color.getName());
       i++;
     }
     int num = -1;
@@ -65,7 +67,8 @@ public class ConsoleController implements IController {
   public int AskForCardFromHand(IPlayer player) {
     int num = -1;
     view.showPlayerHand(player);
-    view.showMessage(""+player.getHandSize()+") Robar una carta del mazo e intentar jugarla si es posible.");
+    view.showMessage(
+        "" + player.getHandSize() + ") Robar una carta del mazo e intentar jugarla si es posible.");
     while (num < 0 || num > player.getHandSize()) {
       view.showMessage(
           "Por favor, ingresar un número entre el 0 y el " + player.getHandSize() + ".");
@@ -78,7 +81,7 @@ public class ConsoleController implements IController {
   public void showMessage(String message) {
     view.showMessage(message);
   }
-  
+
   @Override
   public void updatePlayedCard() {
     view.updatePlayedCard();

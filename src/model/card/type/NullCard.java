@@ -9,12 +9,12 @@ public class NullCard extends AbstractCard {
     this.color = Color.NONE;
     this.symbol = Symbol.NONE;
   }
-  
+
   @Override
   public boolean isDiscardable() {
     return false;
   }
-  
+
   @Override
   public void executeAction(IGameLogic game, IController ctrl) {
     // No Action

@@ -10,13 +10,13 @@ import model.player.IPlayerListBuilder;
 import model.player.PlayerManager;
 import model.player.type.IPlayer;
 
-public class GameLogic implements IGameLogic{
-  
+public class GameLogic implements IGameLogic {
+
   private PlayerManager plyrmngr;
   private CardPilesManager pilemgr = new CardPilesManager(new FullDeckStrategy());
   private int well;
-  
-  
+
+
   public GameLogic(IPlayerListBuilder playerBuilder) {
     this.well = 0;
     this.plyrmngr = new PlayerManager(playerBuilder.buildPlayerList());
@@ -67,13 +67,13 @@ public class GameLogic implements IGameLogic{
   @Override
   public void addToDrawWell(int number) {
     well += number;
-    
+
   }
 
   @Override
   public void resetDrawWell() {
     well = 0;
-    
+
   }
 
   @Override
@@ -85,8 +85,8 @@ public class GameLogic implements IGameLogic{
   public void drawCardsFromWell(IPlayer player, IController ctrl) {
     pilemgr.addCardsToPlayer(player, well);
     ctrl.showMessage(this.getCurrentPlayer() + " roba " + well + " cartas.");
-    
-    
+
+
   }
 
   @Override
@@ -123,7 +123,7 @@ public class GameLogic implements IGameLogic{
     if (this.getCurrentPlayer().hasWon()) {
       ctrl.showMessage(this.getCurrentPlayer() + " ha ganado!");
     }
-    
+
   }
 
 }

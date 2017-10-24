@@ -8,7 +8,7 @@ import model.card.type.ICard;
 public class CardPile implements ICardPile {
 
   private Stack<ICard> stack = new Stack<ICard>();
-  
+
   @Override
   public int getSize() {
     return stack.size();

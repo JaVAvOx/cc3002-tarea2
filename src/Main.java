@@ -11,8 +11,8 @@ import view.ConsoleView;
 /**
  * Main class of UNO Game
  * 
- * It instantiates model, view and controller and makes the turn loop
- * while the game hasn't ended.
+ * It instantiates model, view and controller and makes the turn loop while the game hasn't ended.
+ * 
  * @author eriveros
  *
  */
@@ -20,12 +20,12 @@ public class Main {
 
   public static void main(String[] args) {
     IPlayerListBuilder playerBuilder = new PlayerListBuilder();
-    //TODO: Create one human player and 3 random players
+    // TODO: Create one human player and 3 random players
     IPlayer humanPlayer = new HumanPlayer("Human");
     IPlayer randomPlayer1 = new RandomPlayer("Random 1");
     IPlayer randomPlayer2 = new RandomPlayer("Random 2");
     IPlayer randomPlayer3 = new RandomPlayer("Random 3");
-    //TODO: Assign the players to playerBuilder.
+    // TODO: Assign the players to playerBuilder.
     playerBuilder.addPlayer(randomPlayer3);
     playerBuilder.addPlayer(humanPlayer);
     playerBuilder.addPlayer(randomPlayer1);

@@ -17,10 +17,11 @@ public class HumanPlayer extends AbstractPlayer {
     // TODO Auto-generated method stub
     ctrl.showMessage("Carta actual en la pila: " + game.getCurrentPlayedCard().toString());
     if (this.needsToDrawCard(game.getCurrentPlayedCard())) {
-      ctrl.showMessage(game.getCurrentPlayer().toString() + " no tiene cartas para jugar. Debe robar");
+      ctrl.showMessage(
+          game.getCurrentPlayer().toString() + " no tiene cartas para jugar. Debe robar");
       ctrl.showMessage("[AUTODRAW] " + game.getCurrentPlayer().toString() + " roba una carta.");
       int askedIndex = this.getHandSize();
-      if(!game.drawOneCard(this).isPlayableOver(game.getCurrentPlayedCard())) {
+      if (!game.drawOneCard(this).isPlayableOver(game.getCurrentPlayedCard())) {
         askedIndex = -1;
       }
       return this.getCardFromHand(askedIndex);
@@ -28,11 +29,11 @@ public class HumanPlayer extends AbstractPlayer {
     int askedIndex = ctrl.AskForCardFromHand(game.getCurrentPlayer());
     if (askedIndex == this.getHandSize()) {
       ctrl.showMessage(game.getCurrentPlayer().toString() + " roba una carta");
-      if(!game.drawOneCard(this).isPlayableOver(game.getCurrentPlayedCard())) {
+      if (!game.drawOneCard(this).isPlayableOver(game.getCurrentPlayedCard())) {
         askedIndex = -1;
-      }   
+      }
     }
-    return this.getCardFromHand(askedIndex);  
+    return this.getCardFromHand(askedIndex);
   }
 
   @Override

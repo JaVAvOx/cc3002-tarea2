@@ -11,9 +11,9 @@ public class WildDrawFourFactory implements ICardDeckFactory {
   @Override
   public ICardPile createDeck() {
     // TODO Auto-generated method stub
-    for (int i = 0; i<4;i++) {
+    for (int i = 0; i < 4; i++) {
       deck.pushCard(new WildDrawFourCard());
-      
+
     }
     return deck;
   }

@@ -6,11 +6,11 @@ import model.player.type.IPlayer;
 
 public class PlayerListBuilder implements IPlayerListBuilder {
   private ArrayList<IPlayer> players;
-  
+
   public PlayerListBuilder() {
     players = new ArrayList<IPlayer>();
   }
-  
+
   @Override
   public void addPlayer(IPlayer player) {
     players.add(player);

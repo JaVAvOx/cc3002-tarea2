@@ -9,15 +9,15 @@ import model.card.type.ICard;
 import model.card.type.NullCard;
 
 public abstract class AbstractPlayer implements IPlayer {
-  
+
   private boolean shoutedUNO;
   protected ArrayList<ICard> hand = new ArrayList<ICard>();
   private String name;
-  
+
   public AbstractPlayer(String name) {
     this.name = name;
   }
-  
+
   @Override
   public void addToHand(ArrayList<ICard> hand) {
     this.hand.addAll(hand);
@@ -69,8 +69,8 @@ public abstract class AbstractPlayer implements IPlayer {
 
   @Override
   public boolean needsToDrawCard(ICard currentCard) {
-    for(ICard card : hand) {
-      if(card.isPlayableOver(currentCard)) {
+    for (ICard card : hand) {
+      if (card.isPlayableOver(currentCard)) {
         return false;
       }
     }
@@ -84,7 +84,7 @@ public abstract class AbstractPlayer implements IPlayer {
     }
     return hand.get(number);
   }
-  
+
   public String toString() {
     return this.name;
   }

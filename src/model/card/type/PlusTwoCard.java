@@ -9,7 +9,7 @@ public class PlusTwoCard extends AbstractCard {
     this.color = color;
     this.symbol = Symbol.DRAW_TWO;
   }
-  
+
   @Override
   public void executeAction(IGameLogic game, IController ctrl) {
     // TODO Auto-generated method stub
