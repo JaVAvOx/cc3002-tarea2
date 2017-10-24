@@ -9,9 +9,6 @@ public abstract class AbstractCard implements ICard {
   protected Symbol symbol;
 
   @Override
-  public abstract boolean isPlayableOver(ICard otherCard);
-
-  @Override
   public boolean isFirstPlayable() {
     return true;
   }
@@ -36,6 +33,15 @@ public abstract class AbstractCard implements ICard {
   
 
   public String toString() {
-    return "( " + color + " , " + symbol + " )";
+    return "[" + symbol + " , " + color + "]";
+  }
+
+  @Override
+  public boolean isPlayableOver(ICard otherCard) {
+    return this.getColor().equals(otherCard.getColor()) || this.getSymbol().equals(otherCard.getSymbol());
+  }
+  
+  public void setColor(Color c) {
+    this.color = c;
   }
 }

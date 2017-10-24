@@ -11,11 +11,6 @@ public class NumericCard extends AbstractCard {
   }
 
   @Override
-  public boolean isPlayableOver(ICard otherCard) {
-    return this.getColor().equals(otherCard.getColor()) || this.getSymbol().equals(otherCard.getSymbol());
-  }
-
-  @Override
   public void executeAction(IGameLogic game, IController ctrl) {
 
   }

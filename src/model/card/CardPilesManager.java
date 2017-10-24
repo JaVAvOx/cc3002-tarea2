@@ -2,7 +2,7 @@ package model.card;
 
 import java.util.ArrayList;
 
-import model.card.deck.DeckStrategy;
+import model.card.deck.IDeckStrategy;
 import model.card.type.ICard;
 import model.player.type.IPlayer;
 
@@ -11,9 +11,12 @@ public class CardPilesManager implements ICardPilesManager {
   ICardPile discard = new CardPile();
   
   
-  public CardPilesManager(DeckStrategy strategy) {
+  public CardPilesManager(IDeckStrategy strategy) {
     this.deck = strategy.createDeck();
-    this.discard.pushCard(deck.popCard());
+    while(!deck.peekCard().isFirstPlayable()) {
+     deck.shuffle(); 
+    }
+    discard.pushCard(deck.popCard());
   }
   
   @Override

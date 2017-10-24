@@ -6,12 +6,10 @@ import model.card.type.Color;
 import model.card.type.NumericCard;
 import model.card.type.Symbol;
 
-public class DeckStrategy implements IDeckStrategy {
-
+public class NumericDeckFactory implements ICardDeckFactory {
   private ICardPile deck = new CardPile();
   private Symbol[] symbols = Symbol.getNumeric();
   private Color[] colors = Color.getColors();
-  
   @Override
   public ICardPile createDeck() {
     // TODO Auto-generated method stub

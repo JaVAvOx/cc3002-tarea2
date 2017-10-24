@@ -6,6 +6,7 @@ import controller.IController;
 import model.IGameLogic;
 import model.card.type.Color;
 import model.card.type.ICard;
+import model.card.type.NullCard;
 
 public abstract class AbstractPlayer implements IPlayer {
   
@@ -68,17 +69,19 @@ public abstract class AbstractPlayer implements IPlayer {
 
   @Override
   public boolean needsToDrawCard(ICard currentCard) {
-    boolean need = true;
-    int index = 0;
-    while (index < this.getHandSize() && need) {
-      need = !hand.get(index).isPlayableOver(currentCard);
-      index++;
+    for(ICard card : hand) {
+      if(card.isPlayableOver(currentCard)) {
+        return false;
+      }
     }
-    return need;
+    return true;
   }
 
   @Override
   public ICard getCardFromHand(int number) {
+    if (number >= this.getHandSize() || number < 0) {
+      return new NullCard();
+    }
     return hand.get(number);
   }
   

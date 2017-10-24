@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import controller.IController;
 import model.card.CardPilesManager;
-import model.card.deck.DeckStrategy;
+import model.card.deck.FullDeckStrategy;
 import model.card.type.ICard;
 import model.player.IPlayerListBuilder;
 import model.player.PlayerManager;
@@ -13,7 +13,7 @@ import model.player.type.IPlayer;
 public class GameLogic implements IGameLogic{
   
   private PlayerManager plyrmngr;
-  private CardPilesManager pilemgr = new CardPilesManager(new DeckStrategy());
+  private CardPilesManager pilemgr = new CardPilesManager(new FullDeckStrategy());
   private int well;
   
   
@@ -22,10 +22,8 @@ public class GameLogic implements IGameLogic{
     this.plyrmngr = new PlayerManager(playerBuilder.buildPlayerList());
     for (IPlayer player : this.plyrmngr.getPlayers()) {
       this.pilemgr.addCardsToPlayer(player, 7);
-      
     }
   }
-
 
   @Override
   public boolean hasEnded() {
@@ -46,19 +44,19 @@ public class GameLogic implements IGameLogic{
   public void autoShoutUNO(IController ctrl) {
     if (!this.getCurrentPlayer().hasSaidUNO() && this.getCurrentPlayer().hasOneCard()) {
       this.getCurrentPlayer().setSaidUNO(true);
-      ctrl.showMessage(this.getCurrentPlayer() + " grita UNO!");
+      ctrl.showMessage(this.getCurrentPlayer().toString() + " grita UNO!");
     }
   }
 
   @Override
   public void startTurn(IController ctrl) {
-    plyrmngr.startTurn();
     this.autoShoutUNO(ctrl);
     if (!this.isDrawWellEmpty()) {
+      plyrmngr.startTurn();
       this.drawCardsFromWell(this.getCurrentPlayer(), ctrl);
       this.resetDrawWell();
-      this.skipPlayer();
     }
+    plyrmngr.startTurn();
   }
 
   @Override
@@ -87,6 +85,7 @@ public class GameLogic implements IGameLogic{
   public void drawCardsFromWell(IPlayer player, IController ctrl) {
     pilemgr.addCardsToPlayer(player, well);
     ctrl.showMessage(this.getCurrentPlayer() + " roba " + well + " cartas.");
+    
     
   }
 

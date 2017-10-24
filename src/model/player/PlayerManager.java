@@ -31,18 +31,20 @@ public class PlayerManager implements IPlayerManager {
   @Override
   public void invertDirection() {
     direction = (direction.getValue() == -1) ? Direction.COUNTERCLOCKWISE : Direction.CLOCKWISE;
+    this.nextPlayer = (this.currentPlayer + direction.getValue()) % players.size();
+    this.nextPlayer = this.nextPlayer < 0 ? this.nextPlayer + this.players.size() : this.nextPlayer;
   }
 
   @Override
   public void startTurn() {
     this.currentPlayer = this.nextPlayer;
-    this.nextPlayer = (this.nextPlayer + direction.getValue()) % players.size();
-
+    this.nextPlayer = (this.currentPlayer + direction.getValue()) % players.size();
+    this.nextPlayer = this.nextPlayer < 0 ? this.nextPlayer + this.players.size() : this.nextPlayer;
   }
 
   @Override
   public void skipPlayer() {
     this.nextPlayer = (this.nextPlayer + direction.getValue()) % players.size();
-
+    this.nextPlayer = this.nextPlayer < 0 ? this.nextPlayer + this.players.size() : this.nextPlayer;
   }
 }
