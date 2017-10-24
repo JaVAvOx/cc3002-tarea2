@@ -11,7 +11,7 @@ import model.card.type.NullCard;
 public abstract class AbstractPlayer implements IPlayer {
   
   private boolean shoutedUNO;
-  private ArrayList<ICard> hand = new ArrayList<ICard>();
+  protected ArrayList<ICard> hand = new ArrayList<ICard>();
   private String name;
   
   public AbstractPlayer(String name) {
