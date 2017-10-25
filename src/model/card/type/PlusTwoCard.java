@@ -3,8 +3,17 @@ package model.card.type;
 import controller.IController;
 import model.IGameLogic;
 
+/*
+ * PlusTwoCard makes the next player draw two cards from deck
+ * 
+ * @author jgomez
+ */
 public class PlusTwoCard extends AbstractCard {
 
+  /*
+   * Constructor for PlusTwoCard
+   * @param color color for the card
+   */
   public PlusTwoCard(Color color) {
     this.color = color;
     this.symbol = Symbol.DRAW_TWO;

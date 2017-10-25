@@ -3,6 +3,11 @@ package model.card.type;
 import controller.IController;
 import model.IGameLogic;
 
+/*
+ * WildColor lets the current player select a color to change the card's color
+ * 
+ * @author jgomez
+ */
 public class WildColor extends AbstractCard {
 
   public WildColor() {

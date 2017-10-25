@@ -4,7 +4,10 @@ import model.card.CardPile;
 import model.card.ICardPile;
 import model.card.type.Color;
 import model.card.type.InvertCard;
-
+/*
+ * Factory for create InvertCard's decks.
+ * @author jgomez
+ */
 public class InvertFactory implements ICardDeckFactory {
   private ICardPile deck = new CardPile();
   private Color[] colors = Color.getColors();

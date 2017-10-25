@@ -3,6 +3,11 @@ package model.card.type;
 import controller.IController;
 import model.IGameLogic;
 
+/*
+ * NullCard is a card with no effect
+ * 
+ * @author jgomez
+ */
 public class NullCard extends AbstractCard {
 
   public NullCard() {

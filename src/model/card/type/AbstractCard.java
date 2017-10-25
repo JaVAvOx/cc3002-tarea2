@@ -2,7 +2,10 @@ package model.card.type;
 
 import controller.IController;
 import model.IGameLogic;
-
+/*
+ * AbstractCard implements methods for ICard interface
+ * @author jgomez
+ */
 public abstract class AbstractCard implements ICard {
 
   protected Color color;
@@ -31,7 +34,10 @@ public abstract class AbstractCard implements ICard {
     return true;
   }
 
-
+  /*
+   * Converts card's information to String 
+   * @return String the card's information
+   */
   public String toString() {
     return "[" + symbol + " , " + color + "]";
   }
@@ -41,7 +47,10 @@ public abstract class AbstractCard implements ICard {
     return this.getColor().equals(otherCard.getColor())
         || this.getSymbol().equals(otherCard.getSymbol());
   }
-
+  
+  /*
+   * Set a new color for a card
+   */
   public void setColor(Color c) {
     this.color = c;
   }

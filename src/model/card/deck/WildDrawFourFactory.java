@@ -3,7 +3,10 @@ package model.card.deck;
 import model.card.CardPile;
 import model.card.ICardPile;
 import model.card.type.WildDrawFourCard;
-
+/*
+ * Factory for create WildDrawFourCard's decks.
+ * @author jgomez
+ */
 public class WildDrawFourFactory implements ICardDeckFactory {
 
   private ICardPile deck = new CardPile();

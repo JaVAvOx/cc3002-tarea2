@@ -4,9 +4,16 @@ import controller.IController;
 import model.IGameLogic;
 import model.card.type.Color;
 import model.card.type.ICard;
-
+/*
+ * The human player lets a human play the game
+ */
 public class HumanPlayer extends AbstractPlayer {
 
+  /*
+   * Constructor for HumanPlayer
+   * 
+   * @param name Name of the player
+   */
   public HumanPlayer(String name) {
     super(name);
     // TODO Auto-generated constructor stub

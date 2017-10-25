@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import model.player.type.IPlayer;
 
+/*
+ * Manages the turns of the players
+ * 
+ * @author jgomez
+ */
 public class PlayerManager implements IPlayerManager {
 
 
@@ -12,6 +17,11 @@ public class PlayerManager implements IPlayerManager {
   private Direction direction = Direction.COUNTERCLOCKWISE;
   private int nextPlayer = (currentPlayer + direction.getValue());
 
+  /*
+   * Constructor for player manager
+   * 
+   * @param builPlayerList the list of players
+   */
   public PlayerManager(ArrayList<IPlayer> buildPlayerList) {
     // TODO Auto-generated constructor stub
     players = buildPlayerList;

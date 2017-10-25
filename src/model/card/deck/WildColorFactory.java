@@ -3,7 +3,10 @@ package model.card.deck;
 import model.card.CardPile;
 import model.card.ICardPile;
 import model.card.type.WildColor;
-
+/*
+ * Factory for create WildColor cards decks.
+ * @author jgomez
+ */
 public class WildColorFactory implements ICardDeckFactory {
 
   private ICardPile deck = new CardPile();

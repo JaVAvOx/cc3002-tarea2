@@ -4,7 +4,10 @@ import model.card.CardPile;
 import model.card.ICardPile;
 import model.card.type.Color;
 import model.card.type.PlusTwoCard;
-
+/*
+ * Factory for create PlusTwoCard's decks.
+ * @author jgomez
+ */
 public class PlusTwoFactory implements ICardDeckFactory {
   private ICardPile deck = new CardPile();
   private Color[] colors = Color.getColors();

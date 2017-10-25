@@ -3,6 +3,14 @@ package model.card.deck;
 import model.card.CardPile;
 import model.card.ICardPile;
 
+
+/*
+ * Strategy for use a Full Deck
+ * 
+ * 
+ * @author jgomez
+ * 
+ */
 public class FullDeckStrategy implements IDeckStrategy {
 
   ICardPile deck = new CardPile();

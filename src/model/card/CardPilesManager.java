@@ -30,6 +30,9 @@ public class CardPilesManager implements ICardPilesManager {
 
   @Override
   public ICard drawCard() {
+    if (deck.getSize() == 0){
+      this.rebuildDeck();
+    }
     return deck.popCard();
   }
 
@@ -41,6 +44,9 @@ public class CardPilesManager implements ICardPilesManager {
 
   @Override
   public ArrayList<ICard> drawCards(int cardsNumber) {
+    if (deck.getSize() == 0){
+      this.rebuildDeck();
+    }
     ArrayList<ICard> cardsToBeDrawn = new ArrayList<ICard>();
     for (int i = 0; i < cardsNumber; i++) {
       cardsToBeDrawn.add(deck.popCard());

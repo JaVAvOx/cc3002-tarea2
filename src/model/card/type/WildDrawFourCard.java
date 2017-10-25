@@ -3,6 +3,12 @@ package model.card.type;
 import controller.IController;
 import model.IGameLogic;
 
+/*
+ * WildDrawFourCard lets the player change the color of the card and makes 
+ * the next player draw four cards from the deck
+ * 
+ * @author jgomez
+ */
 public class WildDrawFourCard extends AbstractCard {
 
   public WildDrawFourCard() {

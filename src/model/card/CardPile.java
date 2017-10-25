@@ -41,7 +41,6 @@ public class CardPile implements ICardPile {
 
   @Override
   public void pushCards(ICardPile otherPile) {
-    // TODO Auto-generated method stub
     while (!otherPile.isEmpty()) {
       this.pushCard(otherPile.popCard());
     }

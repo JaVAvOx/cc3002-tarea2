@@ -8,10 +8,20 @@ import model.IGameLogic;
 import model.card.type.Color;
 import model.card.type.ICard;
 
+/*
+ * Random player is a player that plays automatically
+ * 
+ * @author jgomez
+ */
 public class RandomPlayer extends AbstractPlayer {
 
   private Random randomGenerator = new Random();
 
+  /*
+   * Constructor for RandomPlayer
+   * 
+   * @param name Name for the player
+   */
   public RandomPlayer(String name) {
     super(name);
     // TODO Auto-generated constructor stub

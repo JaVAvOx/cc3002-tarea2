@@ -4,7 +4,12 @@ import model.card.CardPile;
 import model.card.ICardPile;
 import model.card.type.Color;
 import model.card.type.Symbol;
-
+/*
+ * Strategy for use a Test deck.
+ * 
+ * @author jgomez
+ * 
+ */
 public class DeckForTestStrategy implements IDeckStrategy {
 
   ICardPile deck = new CardPile();

@@ -5,7 +5,10 @@ import model.card.ICardPile;
 import model.card.type.Color;
 import model.card.type.NumericCard;
 import model.card.type.Symbol;
-
+/*
+ * Factory for create NumericCards decks
+ * @author jgomez
+ */
 public class NumericDeckFactory implements ICardDeckFactory {
   private ICardPile deck = new CardPile();
   private Symbol[] symbols = Symbol.getNumeric();

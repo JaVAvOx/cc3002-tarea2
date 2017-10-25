@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import model.player.type.IPlayer;
 
+/*
+ * Builds a player list
+ * 
+ * @author jgomez
+ */
 public class PlayerListBuilder implements IPlayerListBuilder {
   private ArrayList<IPlayer> players;
 

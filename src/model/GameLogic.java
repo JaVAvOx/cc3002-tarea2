@@ -10,6 +10,13 @@ import model.player.IPlayerListBuilder;
 import model.player.PlayerManager;
 import model.player.type.IPlayer;
 
+
+/**
+ * The Class GameLogic to play JavaUNO.
+ * 
+ * @author jgomez
+ * 
+ */
 public class GameLogic implements IGameLogic {
 
   private PlayerManager plyrmngr;
@@ -17,6 +24,11 @@ public class GameLogic implements IGameLogic {
   private int well;
 
 
+  /**
+   * Instantiates a new game logic.
+   *
+   * @param playerBuilder the player builder to be used
+   */
   public GameLogic(IPlayerListBuilder playerBuilder) {
     this.well = 0;
     this.plyrmngr = new PlayerManager(playerBuilder.buildPlayerList());
@@ -25,20 +37,24 @@ public class GameLogic implements IGameLogic {
     }
   }
 
+
   @Override
   public boolean hasEnded() {
     return this.getCurrentPlayer().hasWon();
   }
+
 
   @Override
   public IPlayer getCurrentPlayer() {
     return plyrmngr.getCurrentPlayer();
   }
 
+
   @Override
   public ICard getCurrentPlayedCard() {
     return pilemgr.getCurrentPlayedCard();
   }
+
 
   @Override
   public void autoShoutUNO(IController ctrl) {
@@ -47,6 +63,7 @@ public class GameLogic implements IGameLogic {
       ctrl.showMessage(this.getCurrentPlayer().toString() + " grita UNO!");
     }
   }
+
 
   @Override
   public void startTurn(IController ctrl) {
@@ -59,10 +76,12 @@ public class GameLogic implements IGameLogic {
     plyrmngr.startTurn();
   }
 
+
   @Override
   public void skipPlayer() {
     plyrmngr.skipPlayer();
   }
+
 
   @Override
   public void addToDrawWell(int number) {
@@ -70,16 +89,19 @@ public class GameLogic implements IGameLogic {
 
   }
 
+
   @Override
   public void resetDrawWell() {
     well = 0;
 
   }
 
+
   @Override
   public boolean isDrawWellEmpty() {
     return well == 0;
   }
+
 
   @Override
   public void drawCardsFromWell(IPlayer player, IController ctrl) {
@@ -89,10 +111,12 @@ public class GameLogic implements IGameLogic {
 
   }
 
+
   @Override
   public void invertDirection() {
     plyrmngr.invertDirection();
   }
+
 
   @Override
   public boolean playCard(ICard playedCard, IController ctrl) {
@@ -109,6 +133,7 @@ public class GameLogic implements IGameLogic {
     return true;
   }
 
+
   @Override
   public ICard drawOneCard(IPlayer player) {
     ICard a = pilemgr.drawCard();
@@ -117,6 +142,7 @@ public class GameLogic implements IGameLogic {
     player.addToHand(b);
     return a;
   }
+
 
   @Override
   public void announceWinner(IController ctrl) {
