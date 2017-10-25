@@ -30,7 +30,7 @@ public class RandomPlayer extends AbstractPlayer {
   @Override
   public ICard getCardToPlay(IGameLogic game, IController ctrl) {
     // TODO Auto-generated method stub
-    ctrl.showMessage("Carta actual en la pila: " + game.getCurrentPlayedCard().toString());
+    ctrl.updatePlayedCard();
     if (this.needsToDrawCard(game.getCurrentPlayedCard())) {
       ctrl.showMessage(
           game.getCurrentPlayer().toString() + " no tiene cartas para jugar. Debe robar");
